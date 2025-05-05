@@ -1,5 +1,38 @@
-<html>
-  <body>
-    Hi Marnie!</br>This is a <h1>test</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Local Time</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20%;
+    }
+    #time {
+      font-size: 2em;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Current Local Time</h1>
+  <div id="time">Loading...</div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString(); // Formats time in the viewer's local timezone
+      document.getElementById('time').textContent = timeString;
+    }
+
+    // Update time every second
+    setInterval(updateTime, 1000);
+
+    // Initialize time immediately
+    updateTime();
+  </script>
+</body>
 </html>
